@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension xmlns="https://newrelic.com/docs/java/xsd/v1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="newrelic-extension extension.xsd" name="extension-example" version="1.0" enabled="true">
+  <instrumentation>
+    <pointcut transactionStartPoint="true" ignoreTransaction="false">
+      <nameTransaction/>
+      <interfaceName>org.springframework.batch.item.ItemProcessor</interfaceName>
+      <method>
+        <name>process</name>
+      </method>
+    </pointcut>
+        <pointcut transactionStartPoint="true" ignoreTransaction="false">
+          <nameTransaction/>
+          <interfaceName>com.example.batchprocessing.Person</interfaceName>
+          <method>
+            <name>Person</name>
+            <parameters>
+               <type attributeName="firstName">java.lang.String</type>
+               <type attributeName="lastName">java.lang.String</type>
+            </parameters>
+          </method>
+        </pointcut>
+
+  </instrumentation>
+</extension>
