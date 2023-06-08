@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension xmlns="https://newrelic.com/docs/java/xsd/v1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="newrelic-extension extension.xsd" name="extension-example" version="1.0" enabled="true">
+  <instrumentation>
+  <!-- transactionStartPoint="true" をつけると、このメソッドからトランザクション開始 -->
+    <pointcut transactionStartPoint="true" ignoreTransaction="false">
+      <nameTransaction/>
+      <className>クラス名をここに記入</interfaceName>
+      <method>
+        <name>メソッド名を記入</name>
+      </method>
+    </pointcut>
+  </instrumentation>
+</extension>

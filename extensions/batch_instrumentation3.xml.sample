@@ -8,17 +8,21 @@
         <name>process</name>
       </method>
     </pointcut>
-        <pointcut transactionStartPoint="true" ignoreTransaction="false">
-          <nameTransaction/>
-          <interfaceName>com.example.batchprocessing.Person</interfaceName>
-          <method>
-            <name>Person</name>
-            <parameters>
-               <type attributeName="firstName">java.lang.String</type>
-               <type attributeName="lastName">java.lang.String</type>
-            </parameters>
-          </method>
-        </pointcut>
-
+    <pointcut ignoreTransaction="false">
+      <nameTransaction/>
+      <className>com.example.batchprocessing.Person</className>
+      <method>
+        <name>setFirstName</name>
+        <parameters>
+           <type attributeName="firstName">java.lang.String</type>
+        </parameters>
+      </method>
+      <method>
+        <name>setLastName</name>
+        <parameters>
+           <type attributeName="lastName">java.lang.String</type>
+        </parameters>
+      </method>
+    </pointcut>
   </instrumentation>
 </extension>
